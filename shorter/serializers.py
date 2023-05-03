@@ -7,6 +7,4 @@ class UrlSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Url
-        extra_kwargs = {
-            'id': {'read_only': True}
-        }
+        fields = "__all__"
