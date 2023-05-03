@@ -1,3 +1,27 @@
 from django.shortcuts import render
+from django.http import HttpRequest
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.response import Response
 
-# Create your views here.
+from .serializers import UrlSerializer
+from .models import Url
+
+
+class UrlView(ModelViewSet):
+
+    serializer_class = UrlSerializer
+    queryset = Url.objects.all()
+
+
+    def create(self, request, *args, **kwargs):
+        print('here')
+        serializer = self.serializer_class(data=request.data)
+        host = request.get_host()
+        protocol = 'http'
+        if serializer.is_valid():
+            obj = serializer.save()
+            print(obj)
+            url = f"{protocol}://{host}/{serializer.data.get('id')}"
+            return Response({"short_url": url})
+    
+
