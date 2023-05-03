@@ -14,13 +14,11 @@ class UrlView(ModelViewSet):
 
 
     def create(self, request, *args, **kwargs):
-        print('here')
         serializer = self.serializer_class(data=request.data)
         host = request.get_host()
         protocol = 'http'
         if serializer.is_valid():
             obj = serializer.save()
-            print(obj)
             url = f"{protocol}://{host}/{serializer.data.get('id')}"
             return Response({"short_url": url})
     
