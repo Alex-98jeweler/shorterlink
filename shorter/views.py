@@ -20,6 +20,7 @@ class UrlView(ModelViewSet):
         if serializer.is_valid():
             obj = serializer.save()
             url = f"{protocol}://{host}/{serializer.data.get('id')}"
-            return Response({"short_url": url})
+            return Response({'id': obj.id,"short_url": url})
+        return Response(dict(serializer.errors), status=400)
     
 
