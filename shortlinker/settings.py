@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'shorter',
+    'link_representer',
+    'frontend'
 ]
 
 MIDDLEWARE = [

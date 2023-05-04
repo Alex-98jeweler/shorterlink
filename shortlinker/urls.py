@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shorter.urls')),
     path('', include('link_representer.urls')),
-    
+    path('', include('frontend.urls'))
+
 ]
