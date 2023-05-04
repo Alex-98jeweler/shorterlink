@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import represent_link_view
+from .views import RepresentLinkView
 
 urlpatterns = [
-    path('<id>/', represent_link_view,),
+    path('<id>/', RepresentLinkView.as_view(),),
     
 ]
