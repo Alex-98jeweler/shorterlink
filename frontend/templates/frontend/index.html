@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +10,11 @@
 </head>
 <body>
     <form action="" method="post" id="link_form">
-        <input type="url" placeholder="Enter URL">
+        {% csrf_token %}
+        <input type="text" placeholder="Enter URL" name="long_url", id="long_url">
+        <input type="submit" value="Send">
     </form>
+    <p style="display: none" id="input_error">Enter correct URL</p>
+    <script src="{% static 'sender.js' %}"></script>
 </body>
 </html>
