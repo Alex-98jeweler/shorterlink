@@ -24,7 +24,11 @@
             <li><input type="submit" value="Send"></li>
         </ul>
     </form>
-    <p style="display: none" id="input_error">Enter correct URL</p>
+    <ul id="error_input">
+        <li><p style="display: none" id="input_error_url">Enter correct URL</p></li>
+        <li><p style="display: none" id="input_error_custom_name">Enter correct slug for custom name. Available symbols: lower latin alphabet and dash</p></li>
+    </ul>
     <script src="{% static 'sender.js' %}"></script>
+    <script src="{% static 'validation.js' %}"></script>
 </body>
 </html>
