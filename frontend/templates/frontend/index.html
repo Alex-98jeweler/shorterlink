@@ -6,13 +6,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Shortlinker</title>
 </head>
 <body>
     <form action="" method="post" id="link_form">
         {% csrf_token %}
-        <input type="text" placeholder="Enter URL" name="long_url", id="long_url">
-        <input type="submit" value="Send">
+        <ul id='form_part'>
+            <li>
+                <label for="long_url">Your URL:</label>
+                <input type="text" placeholder="Enter URL" name="long_url" id="long_url">
+            </li>
+            <li>
+                <label for='custom_name'>Your custom name:</label>
+                <input type="text" placeholder="Enter your custom name" name="custom_name" id="custom_name">  
+            </li>
+            <li><input type="submit" value="Send"></li>
+        </ul>
     </form>
     <p style="display: none" id="input_error">Enter correct URL</p>
     <script src="{% static 'sender.js' %}"></script>
