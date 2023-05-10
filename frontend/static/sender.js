@@ -1,14 +1,20 @@
 
 
-function serializeData(long_url) {
+function serializeData(long_url, custom_name) {
     var json = {
-        'long_url': long_url
+        'long_url': long_url,
+        'custom_name': custom_name
     }
     return json
 }
 
 function get_long_url() {
     var input = document.getElementById('long_url');
+    return input.value
+}
+
+function get_custom_name() {
+    var input = document.getElementById('custom_name');
     return input.value
 }
 
@@ -20,7 +26,8 @@ function show_error() {
 async function handleForm(event) {
     event.preventDefault();
     let long_url = get_long_url()
-    json = serializeData(long_url);
+    let custom_name = get_custom_name()
+    json = serializeData(long_url, custom_name);
     await fetch('/create_short_link/', 
                             {
                                 method: "POST", 
