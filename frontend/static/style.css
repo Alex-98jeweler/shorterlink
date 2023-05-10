@@ -1,5 +1,8 @@
+#error_input {
+    list-style: none;
+}
 
-#link_form, #result {
+.main, #result {
     padding: 50px;
     position: fixed; top: 50%; left: 50%;
     -webkit-transform: translate(-50%, -50%);
