@@ -1,0 +1,14 @@
+
+#form_part {
+    list-style: none;
+    float: left;
+}
+
+#form_part, label {
+    clear:both; 
+    text-align:right;
+}
+
+label {
+    float: left;
+}
