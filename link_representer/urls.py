@@ -3,6 +3,6 @@ from django.urls import path
 from .views import RepresentLinkView
 
 urlpatterns = [
-    path('redirect/<id>/', RepresentLinkView.as_view(),),
-    
+    path('<str:id>/', RepresentLinkView.as_view(),),
+
 ]

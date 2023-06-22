@@ -7,7 +7,7 @@ from .utils import get_url_obj
 
 class RepresentLinkView(View):
 
-    def get(request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         id = kwargs.get('id')
         url = get_url_obj(id)
         if not url:
