@@ -4,3 +4,4 @@ ignore=F401, E501
 
 exclude=
         ./shortlinker,
+        ./db.sqlite3
