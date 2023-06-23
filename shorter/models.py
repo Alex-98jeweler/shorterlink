@@ -10,5 +10,5 @@ class Url(models.Model):
 
     def get_absolute_url(self):
         if self.custom_name:
-            return f"/{self.custom_name}/"
-        return f"/{self.id}/"
+            return f"/redirect/{self.custom_name}/"
+        return f"/redirect/{self.id}/"
