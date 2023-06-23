@@ -18,6 +18,6 @@ class UrlView(ModelViewSet):
         protocol = 'https'
         if serializer.is_valid():
             obj = serializer.save()
-            url = f"{protocol}://{host}/{obj.get_absolute_url()}"
+            url = f"{protocol}://{host}{obj.get_absolute_url()}"
             return Response({'id': obj.id, "short_url": url})
         return Response(serializer.errors, status=400)
