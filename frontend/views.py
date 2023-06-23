@@ -18,5 +18,5 @@ class ResultShortenerView(View):
             obj = Url.objects.get(pk=id)
         except Url.DoesNotExist:
             return render(request, 'error.html',)
-        host = f"http://{request.get_host()}"
+        host = f"https://{request.get_host()}"
         return render(request, 'frontend/result.html', context={'url': obj, 'host': host})

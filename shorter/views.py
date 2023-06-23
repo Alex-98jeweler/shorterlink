@@ -15,7 +15,7 @@ class UrlView(ModelViewSet):
     def create(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
         host = request.get_host()
-        protocol = 'http'
+        protocol = 'https'
         if serializer.is_valid():
             obj = serializer.save()
             url = f"{protocol}://{host}/{serializer.data.get('id')}"
