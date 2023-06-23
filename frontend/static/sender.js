@@ -15,6 +15,9 @@ function get_long_url() {
 
 function get_custom_name() {
     var input = document.getElementById('custom_name');
+    if (input.value === "") {
+        return null
+    }
     return input.value
 }
 
